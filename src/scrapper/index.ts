@@ -17,7 +17,7 @@ const getVerifiedContracts = async (driver: ThenableWebDriver, page: number = 1,
 
         console.log(`Getting verified contracts on page ${page}`);
 
-        await driver.get(`https://bscscan.com/contractsVerified/${page}`);
+        await driver.get(`https://etherscan.io/contractsVerified/${page}`);
 
         const table = await driver.findElement(By.css('table'));
 

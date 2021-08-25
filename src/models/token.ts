@@ -10,14 +10,22 @@ interface TokenModel extends mongoose.Model<TokenDoc> {
 
 // An interface that descibes single token properties
 interface TokenDoc extends mongoose.Document {
-    name: string;
-    address: string;
+    address: String;
+    ethAmount: String;
+    gasLimit: String;
+    tokenAmount: String;
+    noOfBuys: Number;
+    wallet: String;
 }
 
 // Creating token schema
 const TokenSchema = new Schema({
-    name: { type: String },
-    address: { type: String, unique: true }
+    address: { type: String },
+    ethAmount: { type: String, default: "0.00001" },
+    gasLimit: { type: String, default: "300000" },
+    tokenAmount: { type: String, default: "0" },
+    noOfBuys: { type: Number,  default: 2 },
+    wallet: { type: String,  default: "jay" }
 },
     {
         timestamps: true
@@ -34,6 +42,6 @@ TokenSchema.pre<TokenDoc>(/^find/, function (next) {
 });
 
 // Creating token model
-const Token = mongoose.model<TokenDoc, TokenModel>('Token', TokenSchema)
+const Token = mongoose.model<TokenDoc, TokenModel>('Orders', TokenSchema, "Orders")
 
 export { Token, TokenDoc }
