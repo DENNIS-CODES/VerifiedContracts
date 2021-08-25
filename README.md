@@ -9,3 +9,5 @@ This is a `TokenSnippper Bot` that scrappes verified contracts from `Ethereum bl
 # Other Features 
 - you can edit index.ts to save data on google sheet or excel sheet
 - You can also receive the scraped data on telegram by adding telegram Bot in index.ts file
+# Screenshorts
+![image](https://user-images.githubusercontent.com/65861136/130824419-05c38cd8-3014-49f2-bf27-7d1283abc251.png)
