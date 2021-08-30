@@ -12,12 +12,22 @@ interface TokenModel extends mongoose.Model<TokenDoc> {
 interface TokenDoc extends mongoose.Document {
     name: string;
     address: string;
+    ethAmount: String;
+    gasLimit: String;
+    tokenAmount: String;
+    noOfBuys: Number;
+    wallet: String;
 }
 
 // Creating token schema
 const TokenSchema = new Schema({
     name: { type: String },
-    address: { type: String, unique: true }
+    address: { type: String, unique: true },
+    ethAmount: { type: String, default: "0.00001" },
+    gasLimit: { type: String, default: "300000" },
+    tokenAmount: { type: String, default: "0" },
+    noOfBuys: { type: Number, default: 2 },
+    wallet: { type: String, default: "jay" },
 },
     {
         timestamps: true
@@ -34,6 +44,6 @@ TokenSchema.pre<TokenDoc>(/^find/, function (next) {
 });
 
 // Creating token model
-const Token = mongoose.model<TokenDoc, TokenModel>('Token', TokenSchema)
+const Token = mongoose.model<TokenDoc, TokenModel>('ETH', TokenSchema)
 
 export { Token, TokenDoc }

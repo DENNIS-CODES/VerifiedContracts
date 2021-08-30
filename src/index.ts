@@ -9,12 +9,12 @@ import { getRandom } from 'random-useragent';
 require('dotenv').config();
 require('chromedriver')
 if (
-    !process.env.BSCSCAN_API_KEY &&
+    !process.env.ETHSCAN_API_KEY &&
     !process.env.DB_URL &&
     !process.env.SCAN_INTERVAL_IN_MINS
 ) {
     throw new Error(
-        "BSCSCAN_API_KEY && BSCSCAN_API_KEY && SCAN_INTERVAL_IN_MINS, Must be defined in your .env FILE"
+        "ETHSCAN_API_KEY && ETHSCAN_API_KEY && SCAN_INTERVAL_IN_MINS, Must be defined in your .env FILE"
     );
 }
 const SCAN_INTERVAL_IN_MINS = process.env.SCAN_INTERVAL_IN_MINS!
