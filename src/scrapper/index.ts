@@ -30,7 +30,7 @@ const getVerifiedContracts = async (driver: ThenableWebDriver, page: number = 1,
             let rowCells = await token.findElements(By.css('td'))
 
             contracts.push({
-                address: await rowCells[0].findElement(By.css('a')).getAttribute('data-original-title'),
+                token: await rowCells[0].findElement(By.css('a')).getAttribute('data-original-title'),
                 name: await rowCells[1].getText(),
                 compiler: await rowCells[2].getText(),
                 version: await rowCells[3].getText(),

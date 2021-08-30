@@ -2,7 +2,7 @@ import { Profile } from "./profile";
 
 export interface Token {
     name: string;
-    address: string;
+    token: string;
     compiler?: string;
     version?: string;
     balance?: string;
